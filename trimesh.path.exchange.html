@@ -1,0 +1,715 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>trimesh.path.exchange package &mdash; trimesh 2.37.22 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="trimesh.path package" href="trimesh.path.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> trimesh
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.37.22
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Advanced Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Module Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="trimesh.html">trimesh package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="trimesh.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="trimesh.exchange.html">trimesh.exchange package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.interfaces.html">trimesh.interfaces package</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="trimesh.path.html">trimesh.path package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.ray.html">trimesh.ray package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.resources.html">trimesh.resources package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.scene.html">trimesh.scene package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.viewer.html">trimesh.viewer package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.visual.html">trimesh.visual package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.base">trimesh.base module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.boolean">trimesh.boolean module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.bounds">trimesh.bounds module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.caching">trimesh.caching module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.collision">trimesh.collision module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.comparison">trimesh.comparison module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.constants">trimesh.constants module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.convex">trimesh.convex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.creation">trimesh.creation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.curvature">trimesh.curvature module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.decomposition">trimesh.decomposition module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.geometry">trimesh.geometry module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.graph">trimesh.graph module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.grouping">trimesh.grouping module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.inertia">trimesh.inertia module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.integrate">trimesh.integrate module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.intersections">trimesh.intersections module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.interval">trimesh.interval module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.nsphere">trimesh.nsphere module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.parent">trimesh.parent module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.permutate">trimesh.permutate module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.points">trimesh.points module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.poses">trimesh.poses module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.primitives">trimesh.primitives module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.proximity">trimesh.proximity module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.registration">trimesh.registration module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.remesh">trimesh.remesh module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.rendering">trimesh.rendering module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.repair">trimesh.repair module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.sample">trimesh.sample module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.smoothing">trimesh.smoothing module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.transformations">trimesh.transformations module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.triangles">trimesh.triangles module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.units">trimesh.units module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.util">trimesh.util module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.version">trimesh.version module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.voxel">trimesh.voxel module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">trimesh</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">Module Reference</a> &raquo;</li>
+        
+          <li><a href="trimesh.html">trimesh package</a> &raquo;</li>
+        
+          <li><a href="trimesh.path.html">trimesh.path package</a> &raquo;</li>
+        
+      <li>trimesh.path.exchange package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/trimesh.path.exchange.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="trimesh-path-exchange-package">
+<h1>trimesh.path.exchange package<a class="headerlink" href="#trimesh-path-exchange-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-trimesh.path.exchange.dxf">
+<span id="trimesh-path-exchange-dxf-module"></span><h2>trimesh.path.exchange.dxf module<a class="headerlink" href="#module-trimesh.path.exchange.dxf" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.path.exchange.dxf.export_dxf">
+<code class="descclassname">trimesh.path.exchange.dxf.</code><code class="descname">export_dxf</code><span class="sig-paren">(</span><em>path</em>, <em>layers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.dxf.export_dxf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a 2D path object to a DXF file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>path: trimesh.path.path.Path2D</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>export: str, path formatted as a DXF file</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.exchange.dxf.get_key">
+<code class="descclassname">trimesh.path.exchange.dxf.</code><code class="descname">get_key</code><span class="sig-paren">(</span><em>blob</em>, <em>field</em>, <em>code</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.dxf.get_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a loaded (n, 2) blob and a field name
+get a value by code.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.exchange.dxf.load_dwg">
+<code class="descclassname">trimesh.path.exchange.dxf.</code><code class="descname">load_dwg</code><span class="sig-paren">(</span><em>file_obj</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.dxf.load_dwg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load DWG files by converting them to DXF files using
+TeighaFileConverter.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>file_obj</strong> <span class="classifier-delimiter">:</span> <span class="classifier">file- like object</span></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>loaded</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">kwargs for a Path2D constructor</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.exchange.dxf.load_dxf">
+<code class="descclassname">trimesh.path.exchange.dxf.</code><code class="descname">load_dxf</code><span class="sig-paren">(</span><em>file_obj</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.dxf.load_dxf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a DXF file to a dictionary containing vertices and
+entities.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>file_obj: file or file- like object (has object.read method)</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>result: dict, keys are  entities, vertices and metadata</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.path.exchange.export">
+<span id="trimesh-path-exchange-export-module"></span><h2>trimesh.path.exchange.export module<a class="headerlink" href="#module-trimesh.path.exchange.export" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.path.exchange.export.export_dict">
+<code class="descclassname">trimesh.path.exchange.export.</code><code class="descname">export_dict</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.export.export_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a path as a dict of kwargs for the Path constructor.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.exchange.export.export_path">
+<code class="descclassname">trimesh.path.exchange.export.</code><code class="descname">export_path</code><span class="sig-paren">(</span><em>path</em>, <em>file_type=None</em>, <em>file_obj=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.export.export_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a Path object to a file- like object, or to a filename</p>
+<dl class="docutils">
+<dt>file_obj:  None, str, or file object</dt>
+<dd>A filename string or a file-like object</dd>
+<dt>file_type: None or str</dt>
+<dd>File type, e.g.: ‘svg’, ‘dxf’</dd>
+</dl>
+<p>kwargs : passed to loader</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>exported</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or bytes</span></dt>
+<dd><p class="first last">Data exported</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.path.exchange.load">
+<span id="trimesh-path-exchange-load-module"></span><h2>trimesh.path.exchange.load module<a class="headerlink" href="#module-trimesh.path.exchange.load" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.path.exchange.load.load_path">
+<code class="descclassname">trimesh.path.exchange.load.</code><code class="descname">load_path</code><span class="sig-paren">(</span><em>obj</em>, <em>file_type=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.load.load_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a file to a Path object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>obj</strong> <span class="classifier-delimiter">:</span> <span class="classifier">One of the following:</span></dt>
+<dd><ul class="first last simple">
+<li>Path, Path2D, or Path3D objects</li>
+<li>open file object (dxf or svg)</li>
+<li>file name (dxf or svg)</li>
+<li>shapely.geometry.Polygon</li>
+<li>shapely.geometry.MultiLineString</li>
+<li>dict with kwargs for Path constructor</li>
+<li>(n,2,(2|3)) float, line segments</li>
+</ul>
+</dd>
+<dt><strong>file_type</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Type of file is required if file
+object passed.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>path</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Path, Path2D, Path3D object</span></dt>
+<dd><p class="first last">Data as a native trimesh Path object</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.exchange.load.path_formats">
+<code class="descclassname">trimesh.path.exchange.load.</code><code class="descname">path_formats</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.load.path_formats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of supported path formats.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>loaders</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of str</span></dt>
+<dd><p class="first last">Extensions of loadable formats, ie:
+[‘svg’, ‘dxf’]</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.path.exchange.misc">
+<span id="trimesh-path-exchange-misc-module"></span><h2>trimesh.path.exchange.misc module<a class="headerlink" href="#module-trimesh.path.exchange.misc" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.path.exchange.misc.dict_to_path">
+<code class="descclassname">trimesh.path.exchange.misc.</code><code class="descname">dict_to_path</code><span class="sig-paren">(</span><em>as_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.misc.dict_to_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn a pure dict into a dict containing entity objects that
+can be sent directly to a Path constructor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>as_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">Has keys: ‘vertices’, ‘entities’</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">Has keys: ‘vertices’, ‘entities’</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.exchange.misc.edges_to_path">
+<code class="descclassname">trimesh.path.exchange.misc.</code><code class="descname">edges_to_path</code><span class="sig-paren">(</span><em>edges</em>, <em>vertices</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.misc.edges_to_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given an edge list of indices and associated vertices
+representing lines, generate kwargs for a Path object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>edges</strong> <span class="classifier-delimiter">:</span> <span class="classifier">(n, 2) int</span></dt>
+<dd><p class="first last">Vertex indices of line segments</p>
+</dd>
+<dt><strong>vertices</strong> <span class="classifier-delimiter">:</span> <span class="classifier">(m, dimension) float</span></dt>
+<dd><p class="first last">Vertex positions where dimension is 2 or 3</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>kwargs: dict, kwargs for Path constructor</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.exchange.misc.faces_to_path">
+<code class="descclassname">trimesh.path.exchange.misc.</code><code class="descname">faces_to_path</code><span class="sig-paren">(</span><em>mesh</em>, <em>face_ids=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.misc.faces_to_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a mesh and face indices find the outline edges and
+turn them into a Path3D.</p>
+<dl class="docutils">
+<dt>mesh <span class="classifier-delimiter">:</span> <span class="classifier">trimesh.Trimesh</span></dt>
+<dd>Triangulated surface in 3D</dd>
+<dt>face_ids <span class="classifier-delimiter">:</span> <span class="classifier">(n,) int</span></dt>
+<dd>Indexes referencing mesh.faces</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">Kwargs for Path3D constructor</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.exchange.misc.lines_to_path">
+<code class="descclassname">trimesh.path.exchange.misc.</code><code class="descname">lines_to_path</code><span class="sig-paren">(</span><em>lines</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.misc.lines_to_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn line segments into a Path2D or Path3D object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>lines</strong> <span class="classifier-delimiter">:</span> <span class="classifier">(n, 2, dimension) or (n, dimension) float</span></dt>
+<dd><p class="first last">Line segments or connected polyline curve in 2D or 3D</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">kwargs for Path constructor</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.exchange.misc.linestrings_to_path">
+<code class="descclassname">trimesh.path.exchange.misc.</code><code class="descname">linestrings_to_path</code><span class="sig-paren">(</span><em>multi</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.misc.linestrings_to_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load shapely LineString objects into a trimesh.path.Path2D object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>multi</strong> <span class="classifier-delimiter">:</span> <span class="classifier">shapely.geometry.LineString or MultiLineString</span></dt>
+<dd><p class="first last">Input 2D geometry</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">Keyword arguments for Path2D constructor</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.exchange.misc.polygon_to_path">
+<code class="descclassname">trimesh.path.exchange.misc.</code><code class="descname">polygon_to_path</code><span class="sig-paren">(</span><em>polygon</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.misc.polygon_to_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load shapely Polygon objects into a trimesh.path.Path2D object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>polygon</strong> <span class="classifier-delimiter">:</span> <span class="classifier">shapely.geometry.Polygon</span></dt>
+<dd><p class="first last">Input geometry</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">Keyword arguments for Path2D constructor</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.path.exchange.svg_io">
+<span id="trimesh-path-exchange-svg-io-module"></span><h2>trimesh.path.exchange.svg_io module<a class="headerlink" href="#module-trimesh.path.exchange.svg_io" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="trimesh.path.exchange.svg_io.export_svg">
+<code class="descclassname">trimesh.path.exchange.svg_io.</code><code class="descname">export_svg</code><span class="sig-paren">(</span><em>drawing</em>, <em>return_path=False</em>, <em>layers=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.svg_io.export_svg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a Path2D object into an SVG file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>drawing</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Path2D</span></dt>
+<dd><p class="first last">Source geometry</p>
+</dd>
+<dt><strong>return_path</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">If True return only path string</p>
+</dd>
+<dt><strong>layers</strong> <span class="classifier-delimiter">:</span> <span class="classifier">None, or [str]</span></dt>
+<dd><p class="first last">Only export specified layers</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>as_svg: str, XML formatted as SVG</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.exchange.svg_io.svg_to_path">
+<code class="descclassname">trimesh.path.exchange.svg_io.</code><code class="descname">svg_to_path</code><span class="sig-paren">(</span><em>file_obj</em>, <em>file_type=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.svg_io.svg_to_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load an SVG file into a Path2D object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>file_obj</strong> <span class="classifier-delimiter">:</span> <span class="classifier">open file object</span></dt>
+<dd><p class="first last">Contains SVG data</p>
+</dd>
+<dt><strong>file_type: None</strong></dt>
+<dd><p class="first last">Not used</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>loaded</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">With kwargs for Path2D constructor</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.path.exchange.svg_io.transform_to_matrices">
+<code class="descclassname">trimesh.path.exchange.svg_io.</code><code class="descname">transform_to_matrices</code><span class="sig-paren">(</span><em>transform</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.path.exchange.svg_io.transform_to_matrices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert an SVG transform string to an array of matrices.</p>
+<dl class="docutils">
+<dt>&gt; transform = “rotate(-10 50 100)</dt>
+<dd>translate(-36 45.5)
+skewX(40)
+scale(1 0.5)”</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>transform</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Contains transformation information in SVG form</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>matrices</strong> <span class="classifier-delimiter">:</span> <span class="classifier">(n, 3, 3) float</span></dt>
+<dd><p class="first last">Multiple transformation matrices from input transform string</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-trimesh.path.exchange">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-trimesh.path.exchange" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="trimesh.path.html" class="btn btn-neutral float-left" title="trimesh.path package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Michael Dawson-Haggerty
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

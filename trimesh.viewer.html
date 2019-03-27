@@ -1,0 +1,853 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>trimesh.viewer package &mdash; trimesh 2.37.22 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> trimesh
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.37.22
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Advanced Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Module Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="trimesh.html">trimesh package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="trimesh.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="trimesh.exchange.html">trimesh.exchange package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.interfaces.html">trimesh.interfaces package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.path.html">trimesh.path package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.ray.html">trimesh.ray package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.resources.html">trimesh.resources package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.scene.html">trimesh.scene package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">trimesh.viewer package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trimesh.visual.html">trimesh.visual package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.base">trimesh.base module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.boolean">trimesh.boolean module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.bounds">trimesh.bounds module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.caching">trimesh.caching module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.collision">trimesh.collision module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.comparison">trimesh.comparison module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.constants">trimesh.constants module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.convex">trimesh.convex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.creation">trimesh.creation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.curvature">trimesh.curvature module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.decomposition">trimesh.decomposition module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.geometry">trimesh.geometry module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.graph">trimesh.graph module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.grouping">trimesh.grouping module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.inertia">trimesh.inertia module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.integrate">trimesh.integrate module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.intersections">trimesh.intersections module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.interval">trimesh.interval module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.nsphere">trimesh.nsphere module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.parent">trimesh.parent module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.permutate">trimesh.permutate module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.points">trimesh.points module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.poses">trimesh.poses module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.primitives">trimesh.primitives module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.proximity">trimesh.proximity module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.registration">trimesh.registration module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.remesh">trimesh.remesh module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.rendering">trimesh.rendering module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.repair">trimesh.repair module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.sample">trimesh.sample module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.smoothing">trimesh.smoothing module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.transformations">trimesh.transformations module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.triangles">trimesh.triangles module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.units">trimesh.units module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.util">trimesh.util module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.version">trimesh.version module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh.voxel">trimesh.voxel module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trimesh.html#module-trimesh">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">trimesh</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">Module Reference</a> &raquo;</li>
+        
+          <li><a href="trimesh.html">trimesh package</a> &raquo;</li>
+        
+      <li>trimesh.viewer package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/trimesh.viewer.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="trimesh-viewer-package">
+<h1>trimesh.viewer package<a class="headerlink" href="#trimesh-viewer-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-trimesh.viewer.notebook">
+<span id="trimesh-viewer-notebook-module"></span><h2>trimesh.viewer.notebook module<a class="headerlink" href="#module-trimesh.viewer.notebook" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="notebook-py">
+<h3>notebook.py<a class="headerlink" href="#notebook-py" title="Permalink to this headline">¶</a></h3>
+<p>Render trimesh.Scene objects in HTML
+and jupyter notebooks using three.js</p>
+<dl class="function">
+<dt id="trimesh.viewer.notebook.in_notebook">
+<code class="descclassname">trimesh.viewer.notebook.</code><code class="descname">in_notebook</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.viewer.notebook.in_notebook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check to see if we are in an IPython or Jypyter notebook.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>in_notebook</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Returns True if we are in a notebook</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.viewer.notebook.scene_to_html">
+<code class="descclassname">trimesh.viewer.notebook.</code><code class="descname">scene_to_html</code><span class="sig-paren">(</span><em>scene</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.viewer.notebook.scene_to_html" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return HTML that will render the scene using
+GLTF/GLB encoded to base64 loaded by three.js</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>scene</strong> <span class="classifier-delimiter">:</span> <span class="classifier">trimesh.Scene</span></dt>
+<dd><p class="first last">Source geometry</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>html</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">HTML containing embedded geometry</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.viewer.notebook.scene_to_notebook">
+<code class="descclassname">trimesh.viewer.notebook.</code><code class="descname">scene_to_notebook</code><span class="sig-paren">(</span><em>scene</em>, <em>height=500</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.viewer.notebook.scene_to_notebook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a scene to HTML containing embedded geometry
+and a three.js viewer that will display nicely in
+an IPython/Jupyter notebook.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>scene</strong> <span class="classifier-delimiter">:</span> <span class="classifier">trimesh.Scene</span></dt>
+<dd><p class="first last">Source geometry</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>html</strong> <span class="classifier-delimiter">:</span> <span class="classifier">IPython.display.HTML</span></dt>
+<dd><p class="first last">Object containing rendered scene</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-trimesh.viewer.windowed">
+<span id="trimesh-viewer-windowed-module"></span><h2>trimesh.viewer.windowed module<a class="headerlink" href="#module-trimesh.viewer.windowed" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="windowed-py">
+<h3>windowed.py<a class="headerlink" href="#windowed-py" title="Permalink to this headline">¶</a></h3>
+<p>Provides a pyglet- based windowed viewer to preview
+Trimesh, Scene, PointCloud, and Path objects.</p>
+<p>Works on all major platforms: Windows, Linux, and OSX.</p>
+<dl class="class">
+<dt id="trimesh.viewer.windowed.SceneViewer">
+<em class="property">class </em><code class="descclassname">trimesh.viewer.windowed.</code><code class="descname">SceneViewer</code><span class="sig-paren">(</span><em>scene</em>, <em>smooth=True</em>, <em>flags=None</em>, <em>visible=True</em>, <em>resolution=None</em>, <em>start_loop=True</em>, <em>callback=None</em>, <em>callback_period=None</em>, <em>caption=None</em>, <em>fixed=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.viewer.windowed.SceneViewer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pyglet.window.Window</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>CURSOR_DEFAULT</strong></dt>
+<dd></dd>
+<dt><strong>WINDOW_STYLE_DEFAULT</strong></dt>
+<dd></dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">caption</span></code></dt>
+<dd><p class="first last">The window caption (title).</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">config</span></code></dt>
+<dd><p class="first last">A GL config describing the context of this window.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">context</span></code></dt>
+<dd><p class="first last">The OpenGL context attached to this window.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">display</span></code></dt>
+<dd><p class="first last">The display this window belongs to.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">fullscreen</span></code></dt>
+<dd><p class="first last">True if the window is currently fullscreen.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">height</span></code></dt>
+<dd><p class="first last">The height of the window, in pixels.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">resizeable</span></code></dt>
+<dd><p class="first last">True if the window is resizable.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">screen</span></code></dt>
+<dd><p class="first last">The screen this window is fullscreen in.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">style</span></code></dt>
+<dd><p class="first last">The window style; one of the <code class="docutils literal notranslate"><span class="pre">WINDOW_STYLE_*</span></code> constants.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">visible</span></code></dt>
+<dd><p class="first last">True if the window is currently visible.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">vsync</span></code></dt>
+<dd><p class="first last">True if buffer flips are synchronised to the screen’s vertical retrace.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">width</span></code></dt>
+<dd><p class="first last">The width of the window, in pixels.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">activate</span></code>()</td>
+<td>Attempt to restore keyboard focus to the window.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#trimesh.viewer.windowed.SceneViewer.add_geometry" title="trimesh.viewer.windowed.SceneViewer.add_geometry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_geometry</span></code></a>(name,&nbsp;geometry,&nbsp;**kwargs)</td>
+<td>Add a geometry to the viewer.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear</span></code>()</td>
+<td>Clear the window.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code>()</td>
+<td>Close the window.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">dispatch_events</span></code>()</td>
+<td>Poll the operating system event queue for new events and call attached event handlers.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw_mouse_cursor</span></code>()</td>
+<td>Draw the custom mouse cursor.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">event</span></code>(*args)</td>
+<td>Function decorator for an event handler.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">flip</span></code>()</td>
+<td>Swap the OpenGL front and back buffers.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_location</span></code>()</td>
+<td>Return the current position of the window.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_size</span></code>()</td>
+<td>Return the current size of the window.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_system_mouse_cursor</span></code>(name)</td>
+<td>Obtain a system mouse cursor.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_viewport_size</span></code>()</td>
+<td>Return the size in actual pixels of the viewport.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#trimesh.viewer.windowed.SceneViewer.init_gl" title="trimesh.viewer.windowed.SceneViewer.init_gl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_gl</span></code></a>()</td>
+<td>Perform the magic incantations to create an OpenGL scene using pyglet.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">maximize</span></code>()</td>
+<td>Maximize the window.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">minimize</span></code>()</td>
+<td>Minimize the window.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_activate</span></code>()</td>
+<td>The window was activated.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_close</span></code>()</td>
+<td>The user attempted to close the window.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_context_lost</span></code>()</td>
+<td>The window’s GL context was lost.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_context_state_lost</span></code>()</td>
+<td>The state of the window’s GL context was lost.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_deactivate</span></code>()</td>
+<td>The window was deactivated.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#trimesh.viewer.windowed.SceneViewer.on_draw" title="trimesh.viewer.windowed.SceneViewer.on_draw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_draw</span></code></a>()</td>
+<td>Run the actual draw calls.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_expose</span></code>()</td>
+<td>A portion of the window needs to be redrawn.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_hide</span></code>()</td>
+<td>The window was hidden.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#trimesh.viewer.windowed.SceneViewer.on_key_press" title="trimesh.viewer.windowed.SceneViewer.on_key_press"><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_key_press</span></code></a>(symbol,&nbsp;modifiers)</td>
+<td>Call appropriate functions given key presses.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_key_release</span></code>(modifiers)</td>
+<td>A key on the keyboard was released.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#trimesh.viewer.windowed.SceneViewer.on_mouse_drag" title="trimesh.viewer.windowed.SceneViewer.on_mouse_drag"><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_mouse_drag</span></code></a>(x,&nbsp;y,&nbsp;dx,&nbsp;dy,&nbsp;buttons,&nbsp;modifiers)</td>
+<td>Pan or rotate the view.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_mouse_enter</span></code>(y)</td>
+<td>The mouse was moved into the window.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_mouse_leave</span></code>(y)</td>
+<td>The mouse was moved outside of the window.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_mouse_motion</span></code>(y,&nbsp;dx,&nbsp;dy)</td>
+<td>The mouse was moved with no buttons held down.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#trimesh.viewer.windowed.SceneViewer.on_mouse_press" title="trimesh.viewer.windowed.SceneViewer.on_mouse_press"><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_mouse_press</span></code></a>(x,&nbsp;y,&nbsp;buttons,&nbsp;modifiers)</td>
+<td>Set the start point of the drag.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_mouse_release</span></code>(y,&nbsp;button,&nbsp;modifiers)</td>
+<td>A mouse button was released.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#trimesh.viewer.windowed.SceneViewer.on_mouse_scroll" title="trimesh.viewer.windowed.SceneViewer.on_mouse_scroll"><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_mouse_scroll</span></code></a>(x,&nbsp;y,&nbsp;dx,&nbsp;dy)</td>
+<td>Zoom the view.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_move</span></code>(y)</td>
+<td>The window was moved.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#trimesh.viewer.windowed.SceneViewer.on_resize" title="trimesh.viewer.windowed.SceneViewer.on_resize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_resize</span></code></a>(width,&nbsp;height)</td>
+<td>Handle resized windows.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_show</span></code>()</td>
+<td>The window was shown.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_text</span></code>()</td>
+<td>The user input some text.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_text_motion</span></code>()</td>
+<td>The user moved the text input cursor.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_text_motion_select</span></code>()</td>
+<td>The user moved the text input cursor while extending the selection.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">pop_handlers</span></code>()</td>
+<td>Pop the top level of event handlers off the stack.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">push_handlers</span></code>(*args,&nbsp;**kwargs)</td>
+<td>Push a level onto the top of the handler stack, then attach zero or more event handlers.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_event_type</span></code>(name)</td>
+<td>Register an event type with the dispatcher.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_handler</span></code>(name,&nbsp;handler)</td>
+<td>Remove a single event handler.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_handlers</span></code>(*args,&nbsp;**kwargs)</td>
+<td>Remove event handlers from the event stack.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#trimesh.viewer.windowed.SceneViewer.reset_view" title="trimesh.viewer.windowed.SceneViewer.reset_view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset_view</span></code></a>([flags])</td>
+<td>Set view to the default view.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#trimesh.viewer.windowed.SceneViewer.save_image" title="trimesh.viewer.windowed.SceneViewer.save_image"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_image</span></code></a>(file_obj)</td>
+<td>Save the current color buffer to a file object in PNG format.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_caption</span></code>(caption)</td>
+<td>Set the window’s caption.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_exclusive_keyboard</span></code>([exclusive])</td>
+<td>Prevent the user from switching away from this window using keyboard accelerators.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_exclusive_mouse</span></code>([exclusive])</td>
+<td>Hide the mouse cursor and direct all mouse events to this window.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_fullscreen</span></code>([fullscreen,&nbsp;screen,&nbsp;mode,&nbsp;…])</td>
+<td>Toggle to or from fullscreen.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_handler</span></code>(name,&nbsp;handler)</td>
+<td>Attach a single event handler.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_handlers</span></code>(*args,&nbsp;**kwargs)</td>
+<td>Attach one or more event handlers to the top level of the handler stack.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_icon</span></code>(*images)</td>
+<td>Set the window icon.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_location</span></code>(x,&nbsp;y)</td>
+<td>Set the position of the window.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_maximum_size</span></code>(width,&nbsp;height)</td>
+<td>Set the maximum size of the window.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_minimum_size</span></code>(width,&nbsp;height)</td>
+<td>Set the minimum size of the window.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_mouse_cursor</span></code>([cursor])</td>
+<td>Change the appearance of the mouse cursor.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_mouse_platform_visible</span></code>([platform_visible])</td>
+<td>Set the platform-drawn mouse cursor visibility.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_mouse_visible</span></code>([visible])</td>
+<td>Show or hide the mouse cursor.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_size</span></code>(width,&nbsp;height)</td>
+<td>Resize the window.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_visible</span></code>([visible])</td>
+<td>Show or hide the window.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_vsync</span></code>(vsync)</td>
+<td>Enable or disable vertical sync control.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">switch_to</span></code>()</td>
+<td>Make this window the current OpenGL rendering context.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#trimesh.viewer.windowed.SceneViewer.toggle_axis" title="trimesh.viewer.windowed.SceneViewer.toggle_axis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">toggle_axis</span></code></a>()</td>
+<td>Toggle a rendered XYZ/RGB axis marker: off, world frame, every frame</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#trimesh.viewer.windowed.SceneViewer.toggle_culling" title="trimesh.viewer.windowed.SceneViewer.toggle_culling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">toggle_culling</span></code></a>()</td>
+<td>Toggle back face culling.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#trimesh.viewer.windowed.SceneViewer.toggle_fullscreen" title="trimesh.viewer.windowed.SceneViewer.toggle_fullscreen"><code class="xref py py-obj docutils literal notranslate"><span class="pre">toggle_fullscreen</span></code></a>()</td>
+<td>Toggle between fullscreen and windowed mode.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#trimesh.viewer.windowed.SceneViewer.toggle_wireframe" title="trimesh.viewer.windowed.SceneViewer.toggle_wireframe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">toggle_wireframe</span></code></a>()</td>
+<td>Toggle wireframe mode</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#trimesh.viewer.windowed.SceneViewer.update_flags" title="trimesh.viewer.windowed.SceneViewer.update_flags"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_flags</span></code></a>()</td>
+<td>Check the view flags, and call required GL functions.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#trimesh.viewer.windowed.SceneViewer.update_lighting" title="trimesh.viewer.windowed.SceneViewer.update_lighting"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_lighting</span></code></a>()</td>
+<td>Take the lights defined in scene.lights and apply them as openGL lights.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="64%" />
+<col width="36%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>dispatch_event</strong></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="trimesh.viewer.windowed.SceneViewer.add_geometry">
+<code class="descname">add_geometry</code><span class="sig-paren">(</span><em>name</em>, <em>geometry</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.viewer.windowed.SceneViewer.add_geometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a geometry to the viewer.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">hashable</span></dt>
+<dd><p class="first last">Name that references geometry</p>
+</dd>
+<dt><strong>geometry</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Trimesh, Path2D, Path3D, PointCloud</span></dt>
+<dd><p class="first last">Geometry to display in the viewer window</p>
+</dd>
+<dt><strong>kwargs **</strong></dt>
+<dd><p class="first last">Passed to rendering.convert_to_vertexlist</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.viewer.windowed.SceneViewer.init_gl">
+<code class="descname">init_gl</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.viewer.windowed.SceneViewer.init_gl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform the magic incantations to create an
+OpenGL scene using pyglet.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.viewer.windowed.SceneViewer.on_draw">
+<code class="descname">on_draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.viewer.windowed.SceneViewer.on_draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the actual draw calls.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.viewer.windowed.SceneViewer.on_key_press">
+<code class="descname">on_key_press</code><span class="sig-paren">(</span><em>symbol</em>, <em>modifiers</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.viewer.windowed.SceneViewer.on_key_press" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call appropriate functions given key presses.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.viewer.windowed.SceneViewer.on_mouse_drag">
+<code class="descname">on_mouse_drag</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>dx</em>, <em>dy</em>, <em>buttons</em>, <em>modifiers</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.viewer.windowed.SceneViewer.on_mouse_drag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pan or rotate the view.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.viewer.windowed.SceneViewer.on_mouse_press">
+<code class="descname">on_mouse_press</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>buttons</em>, <em>modifiers</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.viewer.windowed.SceneViewer.on_mouse_press" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the start point of the drag.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.viewer.windowed.SceneViewer.on_mouse_scroll">
+<code class="descname">on_mouse_scroll</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>dx</em>, <em>dy</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.viewer.windowed.SceneViewer.on_mouse_scroll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zoom the view.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.viewer.windowed.SceneViewer.on_resize">
+<code class="descname">on_resize</code><span class="sig-paren">(</span><em>width</em>, <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.viewer.windowed.SceneViewer.on_resize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle resized windows.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.viewer.windowed.SceneViewer.reset_view">
+<code class="descname">reset_view</code><span class="sig-paren">(</span><em>flags=None</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.viewer.windowed.SceneViewer.reset_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set view to the default view.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>flags</strong> <span class="classifier-delimiter">:</span> <span class="classifier">None or dict</span></dt>
+<dd><p class="first last">If any view key passed override the default
+e.g. {‘cull’: False}</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.viewer.windowed.SceneViewer.save_image">
+<code class="descname">save_image</code><span class="sig-paren">(</span><em>file_obj</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.viewer.windowed.SceneViewer.save_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the current color buffer to a file object
+in PNG format.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>file_obj: file name, or file- like object</strong></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.viewer.windowed.SceneViewer.toggle_axis">
+<code class="descname">toggle_axis</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.viewer.windowed.SceneViewer.toggle_axis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Toggle a rendered XYZ/RGB axis marker:
+off, world frame, every frame</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.viewer.windowed.SceneViewer.toggle_culling">
+<code class="descname">toggle_culling</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.viewer.windowed.SceneViewer.toggle_culling" title="Permalink to this definition">¶</a></dt>
+<dd><p>Toggle back face culling.</p>
+<p>It is on by default but if you are dealing with
+non- watertight meshes you probably want to be able
+to see the back sides.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.viewer.windowed.SceneViewer.toggle_fullscreen">
+<code class="descname">toggle_fullscreen</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.viewer.windowed.SceneViewer.toggle_fullscreen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Toggle between fullscreen and windowed mode.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.viewer.windowed.SceneViewer.toggle_wireframe">
+<code class="descname">toggle_wireframe</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.viewer.windowed.SceneViewer.toggle_wireframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Toggle wireframe mode</p>
+<p>Good for  looking inside meshes, off by default.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.viewer.windowed.SceneViewer.update_flags">
+<code class="descname">update_flags</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.viewer.windowed.SceneViewer.update_flags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the view flags, and call required GL functions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="trimesh.viewer.windowed.SceneViewer.update_lighting">
+<code class="descname">update_lighting</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.viewer.windowed.SceneViewer.update_lighting" title="Permalink to this definition">¶</a></dt>
+<dd><p>Take the lights defined in scene.lights and
+apply them as openGL lights.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.viewer.windowed.geometry_hash">
+<code class="descclassname">trimesh.viewer.windowed.</code><code class="descname">geometry_hash</code><span class="sig-paren">(</span><em>geometry</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.viewer.windowed.geometry_hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an MD5 for a geometry object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>geometry</strong> <span class="classifier-delimiter">:</span> <span class="classifier">object</span></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>MD5</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd></dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.viewer.windowed.render_scene">
+<code class="descclassname">trimesh.viewer.windowed.</code><code class="descname">render_scene</code><span class="sig-paren">(</span><em>scene</em>, <em>resolution=(1080</em>, <em>1080)</em>, <em>visible=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.viewer.windowed.render_scene" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render a preview of a scene to a PNG.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>scene</strong> <span class="classifier-delimiter">:</span> <span class="classifier">trimesh.Scene</span></dt>
+<dd><p class="first last">Geometry to be rendered</p>
+</dd>
+<dt><strong>resolution</strong> <span class="classifier-delimiter">:</span> <span class="classifier">(2,) int</span></dt>
+<dd><p class="first last">Resolution in pixels</p>
+</dd>
+<dt><strong>kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">**</span></dt>
+<dd><p class="first last">Passed to SceneViewer</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>render</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bytes</span></dt>
+<dd><p class="first last">Image in PNG format</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="trimesh.viewer.windowed.view_to_transform">
+<code class="descclassname">trimesh.viewer.windowed.</code><code class="descname">view_to_transform</code><span class="sig-paren">(</span><em>view</em><span class="sig-paren">)</span><a class="headerlink" href="#trimesh.viewer.windowed.view_to_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a dictionary containing view parameters,
+calculate a transformation matrix.</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-trimesh.viewer">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-trimesh.viewer" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="viewer">
+<h3>viewer<a class="headerlink" href="#viewer" title="Permalink to this headline">¶</a></h3>
+<p>View meshes and scenes via pyglet or inline HTML.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Michael Dawson-Haggerty
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
